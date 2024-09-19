@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nic Markram - Developer Portfolio</title>
+    <link rel="stylesheet" href="/client/static/styles.css">
+</head>
+
+<body class="dark-mode">
+    <nav class="sidebar">
+        <div class="toggle-container">
+            <label class="toggle-switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" class="home-link"><span>&#8593;</span></a>
+            <a href="#about" ><span>About</span></a>
+            <a href="#experience" ><span>Experience</span></a>
+            <a href="#projects" ><span>Projects</span></a>
+            <a href="#contact" ><span>Contact</span></a>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/nicmarkram"><img src="/client/static/images/socials/insta.png"
+                    alt="Instagram" class="social-icon"></a>
+            <a href="https://github.com/markramn"><img src="/client/static/images/socials/github.png" alt="GitHub"
+                    class="social-icon"></a>
+            <a href="https://www.linkedin.com/in/nicholasmarkram/"><img src="/client/static/images/socials/linkedin.png"
+                    alt="LinkedIn" class="social-icon"></a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="scroll-indicator">&#x25BC;</div>
+        <section id="home" class="landing">
+            <div class="landing-left">
+                {{ .SVGContent }}
+            </div>
+            <div class="landing-right">
+                <div class="tech-stack" id="techStack"></div>
+                <div class="intro">
+                    <h1 class="title" data-text="_Nic Markram.">_Nic Markram.</h1>
+                    <p class="subtitle">Engineer & Data Scientist</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="home-section about">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+            </div>
+            <div class="content-container">
+                <p>Your about content goes here...</p>
+            </div>
+        </section>
+
+        <section id="experience" class="home-section experience">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="content-container">
+                <p>Your experience content goes here...</p>
+            </div>
+            <div class="section-footer">
+                <button class="see-more">See More</button>
+            </div>
+        </section>
+
+        <section id="projects" class="home-section projects">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="content-container">
+                <div id="projectsGrid" class="projects-grid">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="section-footer">
+                <button class="see-more">See More</button>
+            </div>
+        </section>
+
+        <section id="contact" class="home-section contact">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="content-container">
+                <p>Your contact content goes here...</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer"></div>
+
+    <script src="/client/static/script.js"></script>
+</body>
+
+<script src="/client/static/script.js"></script>
+<script src="/client/static/light-mode-switch.js"></script>
+
+</html>

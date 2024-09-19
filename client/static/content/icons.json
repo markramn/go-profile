@@ -1,0 +1,44 @@
+{
+    "icons": [
+      {
+        "src": "/static/images/techy/github.png",
+        "name": "GitHub",
+        "description": "I use github to automate my CI/CD efforts when developing through most languages. Github actions is a great way to automatically deploy code or an application!"
+      },
+      {
+        "src": "/static/images/techy/python.png",
+        "name": "Python",
+        "description": "Python is my bread & butter. It is my language of choice when building out most projects. Whether it is realtime data analysis, data processing pipeline or machine learning based projects, Python is always a great choice."
+      },
+      {
+        "src": "/static/images/techy/javascript.png",
+        "name": "JavaScript",
+        "description": ""
+      },
+      {
+        "src": "/static/images/techy/html.png",
+        "name": "HTML",
+        "description": ""
+      },
+      {
+        "src": "/static/images/techy/typescript.png",
+        "name": "TypeScript",
+        "description": ""
+      },
+      {
+        "src": "/static/images/techy/azure.png",
+        "name": "Azure",
+        "description": ""
+      },
+      {
+        "src": "/static/images/techy/aws.png",
+        "name": "AWS",
+        "description": ""
+      },
+      {
+        "src": "/static/images/techy/docker.png",
+        "name": "Docker",
+        "description": ""
+      }
+    ]
+  }

@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Sample projects data
 const projects = [
     { title: "Connected Conservation", description: "Worked with extremly high quality satellite data to train machine learning algorithms to detect large mammals from space.", image: "/client/static/images/projects/elephant.jpg", likes: 60 },
-    { title: "Tour de France", description: "Developed into production the realtime analytics backend for Connected Stadium for the Tour de France, a real time tracking application used to track support vehicle, VIPs & fans.", image: "/client/static/images/projects/cycling.jpg", likes: 47 },
     { title: "Conversation Analytics", description: "Full stack design, architecture & production development of a Conversation Analytics product that analyzes customer interaction data.", image: "/client/static/images/projects/conversation.jpg", likes: 96 },
     { title: "Semantic Search", description: "Development of semantic searching applications for full text & fuzzy search using Elastic Cloud", image: "/client/static/images/projects/search.jpg", likes: 225 },
+    { title: "Tour de France", description: "Developed into production the realtime analytics backend for Connected Stadium for the Tour de France, a real time tracking application used to track support vehicle, VIPs & fans.", image: "/client/static/images/projects/cycling.jpg", likes: 47 },
     { title: "RAG", description: "Design & development of a fully conversational feature allowing users to interact with their customer data by querying & grounding large language models.", image: "/client/static/images/projects/rag.jpg", likes: 110 },
     { title: "Power(BI) to the people!", description: "Designed and developed a fully managed PowerBI Embedded Service to white-label PBI Content into our application", image: "/client/static/images/projects/pbi.jpg", likes: 206 },
     { title: "Machine Learning", description: "Built many classical machine learning models for forecasting, classification & prediction.", image: "/client/static/images/projects/alan.jpg", likes: 124 },

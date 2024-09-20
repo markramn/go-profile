@@ -226,6 +226,13 @@ input:checked+.slider:before {
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-direction: column;
+}
+
+.landing-left p {
+    align-self: flex-start;
+    padding-left: 12%;
+    color: var(--light-secondary);
 }
 
 .landing-right {
@@ -513,7 +520,7 @@ body.light-mode .text-block h3 {
     text-align: left;
     margin: 0;
     padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(85, 85, 85, 0);
     border-radius: 5px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);

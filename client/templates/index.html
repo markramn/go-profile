@@ -69,8 +69,10 @@
                                 solutions & backend development.</p>
                         </div>
                         <div class="text-block right">
-                            <p>I currently lead a technical team that's developed our analytics product from scratch, to where we now deliver to over 50 corporate
-                                clients. I have also architected and working towards the launch of our new analytics product by the end of 2024.</p>
+                            <p>I currently lead a technical team that's developed our analytics product from scratch, to
+                                where we now deliver to over 50 corporate
+                                clients. I have also architected and working towards the launch of our new analytics
+                                product by the end of 2024.</p>
                         </div>
                         <div class="text-block left">
                             <p>I'm an adventurer at heart so, when I'm not head down on a project, I am out looking for
@@ -86,7 +88,7 @@
                 <h2 class="section-title">Experience</h2>
             </div>
             <div class="content-container">
-                <p>Your experience content goes here...</p>
+                <p>Experience content goes here</p>
             </div>
             <div class="section-footer">
                 <button class="see-more">See More</button>
@@ -112,17 +114,35 @@
                 <h2 class="section-title">Contact</h2>
             </div>
             <div class="content-container">
-                <p>Your contact content goes here...</p>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
             </div>
         </section>
     </div>
 
     <div class="footer"></div>
 
-    <script src="/client/static/script.js"></script>
 </body>
 
 <script src="/client/static/script.js"></script>
 <script src="/client/static/light-mode-switch.js"></script>
+<script src="/client/static/contact.js"></script>
 
 </html>

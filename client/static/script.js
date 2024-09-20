@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const scrollIndicator = document.querySelector('.scroll-indicator');
     const landingSection = document.getElementById('home');
+    const contactButton = document.getElementById('contactMe');
 
     function toggleScrollIndicator() {
         if (window.scrollY < landingSection.offsetHeight / 2) {
@@ -17,30 +18,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Add scroll event listener
     window.addEventListener('scroll', toggleScrollIndicator);
 
+    function scrollToSection(targetId) {
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Update scroll indicator visibility
+            if (targetId !== 'home') {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+            
+            // Update URL hash without triggering a scroll
+            history.pushState(null, null, `#${targetId}`);
+        }
+    }
+
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                // Update scroll indicator visibility
-                if (targetId !== 'home') {
-                    scrollIndicator.style.opacity = '0';
-                } else {
-                    scrollIndicator.style.opacity = '1';
-                }
-                
-                // Update URL hash without triggering a scroll
-                history.pushState(null, null, `#${targetId}`);
-            }
+            scrollToSection(targetId);
         });
     });
+
+    // Add event listener for the contact button
+    if (contactButton) {
+        contactButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            scrollToSection('contact');
+        });
+    }
 
     // Update hash on scroll (debounced)
     let timeout;

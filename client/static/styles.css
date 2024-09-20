@@ -1,3 +1,4 @@
+/* Imports and Variables */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 :root {
@@ -14,6 +15,7 @@
     --light-secondary: #64748b;
 }
 
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -22,14 +24,16 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Theme Styles */
 body.light-mode {
     background-color: var(--light-bg);
     color: var(--light-text);
@@ -40,22 +44,56 @@ body.dark-mode {
     color: var(--dark-text);
 }
 
-.intro .title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 6em;
-    margin-bottom: 10px;
-    position: relative;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+/* Layout Styles */
+.content {
+    margin-left: 60px;
+    overflow-y: auto;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.home-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+
+.section-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
     font-weight: 700;
+    color: var(--dark-accent);
+    text-align: right;
 }
 
-.intro .subtitle {
-    font-size: 2em;
-    margin-bottom: 20px;
-    font-weight: 300;
+.content-container {
+    max-width: 2000px;
+    max-height: 80%;
+    text-align: center;
+    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 }
 
+/* Sidebar Styles */
 .sidebar {
     position: fixed;
     left: 0;
@@ -90,13 +128,7 @@ body.dark-mode {
 }
 
 .nav-links .home-link {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
     transform: rotate(270deg);
-    padding: 15px 0;
-    text-decoration: none;
-    color: var(--dark-text);
-    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -122,7 +154,7 @@ body.dark-mode {
     transform: scale(1.1);
 }
 
-/* Toggle switch styles */
+/* Toggle Switch Styles */
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -160,15 +192,15 @@ body.dark-mode {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: var(--dark-accent);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(16px);
 }
 
-/* Landing page styles */
+/* Landing Page Styles */
 .landing {
     display: flex;
     height: 100vh;
@@ -196,6 +228,14 @@ input:checked + .slider:before {
     position: relative;
 }
 
+.landing-right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
 .map-background {
     width: 100%;
     height: 100%;
@@ -211,50 +251,33 @@ input:checked + .slider:before {
     transition: all 0.3s;
 }
 
-.map-background path:hover {
-    fill: var(--dark-accent);
-}
-
-.map-background .gauteng {
-    fill: var(--dark-secondary);
-}
-
+.map-background path:hover,
 .map-background .gauteng:hover {
     fill: var(--dark-accent);
 }
 
-.province-label {
-    position: absolute;
-    background-color: rgba(15, 23, 41, 0.7);
-    color: var(--dark-text);
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 14px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.landing-right {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-}
-
-.tech-stack {
-    margin-bottom: 20px;
-}
-
+/* Intro Styles */
 .intro {
     text-align: left;
 }
 
-.intro h1 {
+.intro .title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    position: relative;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
     text-shadow: 0 0 10px var(--dark-accent);
 }
 
+.intro .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Scroll Indicator Styles */
 .scroll-indicator {
     position: absolute;
     bottom: 20px;
@@ -266,79 +289,173 @@ input:checked + .slider:before {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-20px);
     }
+
     60% {
         transform: translateY(-10px);
     }
 }
 
-.content::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
+.about {
+    overflow: hidden;
 }
 
-.content {
-    margin-left: 80px; /* Adjust based on your sidebar width */
-    padding: 10px;
-}
-
-.home-section {
-    height: 100vh; /* Full viewport height */
+.about .content-container {
+    min-height: calc(100vh - 60px); /* Adjust based on your header height */
+    height: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    scroll-snap-align: start; /* For smooth scrolling */
+    align-items: flex-start;
+    padding: 2rem 0;
 }
 
-.content {
-    scroll-snap-type: y mandatory; /* For smooth scrolling */
-    overflow-y: scroll;
-    height: 100vh;
-}
-
-.section-header {
+.about-content {
     display: flex;
-    justify-content: flex-end;
     width: 100%;
+    min-height: 100%;
+    gap: 1rem;
 }
 
-.section-title {
-    font-size: 3em;
-    font-weight: 700;
-    color: var(--dark-accent);
-    text-align: right;
+.about-image {
+    flex: 0 0 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left; /* Align to the left */
+    overflow: hidden; /* Ensure the image doesn't overflow when scaled */
 }
 
-.content-container {
-    max-width: 1200px;
-    text-align: center;
-    margin: auto;
-    flex-grow: 1;
+.about-image img {
+    width: 100%;
+    height: auto; /* Changed from 100% to auto to maintain aspect ratio */
+    max-height: 100%; /* Ensure the image doesn't exceed the container height */
+    object-fit: contain; /* Changed from fill to contain to maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-text {
+    flex: 0 0 55%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
+.text-block {
+    padding: 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    max-width: 90%;
+}
+
+.text-block.left {
+    align-self: flex-start;
+}
+
+.text-block.right {
+    align-self: flex-end;
+}
+
+.text-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.text-block h3 {
+    color: var(--dark-accent);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.text-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+body.light-mode .text-block h3 {
+    color: var(--light-accent);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1400px) {
+    .text-block h3 {
+        font-size: 1.6rem;
+    }
+    .text-block p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .about-image {
+        height: 50vh;
+    }
+
+    .about-image img {
+        object-fit: cover; /* Change to cover for better mobile display */
+    }
+
+    .text-block {
+        max-width: 100%;
+    }
+
+    .text-block.left,
+    .text-block.right {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-image {
+        height: 40vh;
+    }
+    .text-block h3 {
+        font-size: 1.4rem;
+    }
+    .text-block p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Projects Grid Styles */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
 .project-card {
     position: relative;
-    width: 250px;
-    height: 380px;
+    width: 300px;
+    height: 320px;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -351,6 +468,9 @@ input:checked + .slider:before {
 }
 
 .project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -371,20 +491,20 @@ input:checked + .slider:before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(to bottom, 
-        rgba(0,0,0,0.7) 0%, 
-        rgba(0,0,0,0.3) 30%, 
-        rgba(0,0,0,0.3) 70%, 
-        rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.3) 70%,
+            rgba(0, 0, 0, 0.7) 100%);
     transition: background 0.3s ease;
 }
 
 .project-card:hover .project-info {
-    background: linear-gradient(to bottom, 
-        rgba(0,0,0,0.8) 0%, 
-        rgba(0,0,0,0.6) 30%, 
-        rgba(0,0,0,0.6) 70%, 
-        rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.6) 30%,
+            rgba(0, 0, 0, 0.6) 70%,
+            rgba(0, 0, 0, 0.8) 100%);
 }
 
 .project-title {
@@ -396,7 +516,7 @@ input:checked + .slider:before {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .project-description {
@@ -409,6 +529,12 @@ input:checked + .slider:before {
     transition: opacity 0.3s ease, transform 0.3s ease;
     max-height: 150px;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.project-description::-webkit-scrollbar {
+    display: none;
 }
 
 .project-card:hover .project-description {
@@ -433,37 +559,12 @@ input:checked + .slider:before {
     color: #ff4d4d;
 }
 
-@media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .project-card {
-        height: 350px;
-    }
-}
-
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .project-card {
-        height: 300px;
-    }
-}
-
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    .project-card {
-        height: 250px;
-    }
-}
-
+/* Section Footer Styles */
 .section-footer {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    padding: 20px;
 }
 
 .see-more {
@@ -481,7 +582,7 @@ input:checked + .slider:before {
     transform: translateY(-3px);
 }
 
-/* Light mode specific styles */
+/* Light Mode Specific Styles */
 body.light-mode .sidebar {
     background-color: rgba(248, 250, 252, 0.8);
     border-right: 1px solid var(--light-accent);
@@ -500,10 +601,7 @@ body.light-mode .map-background path {
     stroke: var(--light-accent);
 }
 
-body.light-mode .map-background .gauteng {
-    fill: var(--light-secondary);
-}
-
+body.light-mode .map-background path:hover,
 body.light-mode .map-background .gauteng:hover {
     fill: var(--light-accent);
 }
@@ -525,11 +623,30 @@ body.light-mode .landing::before {
     background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
+/* Responsive Design */
+@media screen and (min-width: 1400px) {
+    html {
+        font-size: 18px;
+    }
+
+    .content-container {
+        max-width: 1400px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 12px;
+    }
+
     .landing {
         flex-direction: column;
-        padding-left: 0;
     }
 
     .landing-left,
@@ -537,22 +654,19 @@ body.light-mode .landing::before {
         width: 100%;
     }
 
-    .sidebar {
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        bottom: 0;
-        top: auto;
-        left: 0;
-        border-right: none;
-        border-top: 1px solid var(--dark-accent);
+    .landing-right {
+        padding: 40px;
     }
 
-    .nav-links {
-        flex-direction: row;
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+}
 
-    .nav-links a {
+@media screen and (max-width: 768px) {
+
+    .nav-links a,
+    .nav-links .home-link {
         writing-mode: horizontal-tb;
         transform: rotate(0deg);
         padding: 0 15px;
@@ -562,43 +676,59 @@ body.light-mode .landing::before {
         flex-direction: row;
     }
 
-    .scroll-indicator {
-        bottom: 10px;
+    .social-icon {
+        margin: 0 10px;
     }
 
-    .intro h1 {
-        font-size: 1em;
+    .content {
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+
+    .scroll-indicator {
+        bottom: 70px;
+    }
+
+    .intro .title {
+        font-size: 3rem;
     }
 
     .intro .subtitle {
-        font-size: 1.5em;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        height: 300px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .landing {
-        padding-left: 0;
+    html {
+        font-size: 9px;
     }
 
-    .landing-left,
     .landing-right {
-        width: 100%;
+        padding: 20px;
     }
 
-    .intro h1 {
-        font-size: 2.5em;
+    .intro .title {
+        font-size: 2.5rem;
     }
 
     .intro .subtitle {
-        font-size: 1.2em;
+        font-size: 1rem;
     }
 
     .section-title {
-        font-size: 2.5em;
+        font-size: 1.8rem;
     }
 
     .see-more {
-        font-size: 0.9em;
+        font-size: 0.9rem;
         padding: 8px 16px;
     }
 
@@ -606,5 +736,12 @@ body.light-mode .landing::before {
         width: 25px;
         height: 25px;
     }
-}
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: 250px;
+    }
+}

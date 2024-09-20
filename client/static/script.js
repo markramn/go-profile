@@ -72,7 +72,7 @@ const projects = [
     { title: "Conversation Analytics", description: "Full stack design, architecture & production development of a Conversation Analytics product that analyzes customer interaction data.", image: "/client/static/images/projects/conversation.jpg", likes: 96 },
     { title: "Semantic Search", description: "Development of semantic searching applications for full text & fuzzy search using Elastic Cloud", image: "/client/static/images/projects/search.jpg", likes: 225 },
     { title: "RAG", description: "Design & development of a fully conversational feature allowing users to interact with their customer data by querying & grounding large language models.", image: "/client/static/images/projects/rag.jpg", likes: 110 },
-    { title: "Power(BI) to the people!", description: "Designed and developed a fully managed PowerBI Embedded Service to whitelabel PBI Content into our application", image: "/client/static/images/projects/pbi.jpg", likes: 225 },
+    { title: "Power(BI) to the people!", description: "Designed and developed a fully managed PowerBI Embedded Service to white-label PBI Content into our application", image: "/client/static/images/projects/pbi.jpg", likes: 206 },
     { title: "Machine Learning", description: "Built many classical machine learning models for forecasting, classification & prediction.", image: "/client/static/images/projects/alan.jpg", likes: 124 },
     { title: "Big Data Pipeline Development", description: "Architected & developed many large big data processing pipelines using Azure Functions", image: "/client/static/images/projects/process.jpg", likes: 85 }
 ];

@@ -479,6 +479,116 @@ body.light-mode .text-block h3 {
     }
 }
 
+/* Experience Section Styles */
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience .content-container {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    height: 80vh; /* Set a fixed height for the container */
+}
+
+.experience-content {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Make sure it takes full height of its parent */
+    background-color: rgba(100, 116, 139, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icons-container {
+    flex: 0 0 30%;
+    height: 100% !important; /* Use !important to override any conflicting styles */
+    padding: 20px;
+    background-color: rgba(100, 116, 139, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.experience-details {
+    flex: 0 0 60%;
+    height: 100%; /* Ensure it takes full height */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+#experienceTitle {
+    font-size: 1.5rem;
+    color: var(--dark-accent);
+    margin-bottom: 1rem;
+}
+
+#experienceDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Scrollbar styles for icons-container and experience-details */
+.icons-container::-webkit-scrollbar,
+.experience-details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.icons-container::-webkit-scrollbar-track,
+.experience-details::-webkit-scrollbar-track {
+    background: rgba(100, 116, 139, 0.1);
+}
+
+.icons-container::-webkit-scrollbar-thumb,
+.experience-details::-webkit-scrollbar-thumb {
+    background-color: var(--dark-accent);
+    border-radius: 3px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .experience-content {
+        flex-direction: column;
+    }
+
+    .icons-container,
+    .experience-details {
+        flex: none;
+        width: 100%;
+    }
+
+    .icons-container {
+        height: 200px !important; /* Fixed height for mobile */
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .experience-details {
+        height: calc(100% - 200px); /* Subtract the height of icons-container */
+    }
+}
+
+/* Light mode styles */
+body.light-mode .experience-content {
+    background-color: rgba(100, 116, 139, 0.05);
+}
+
+body.light-mode .icons-container {
+    background-color: rgba(100, 116, 139, 0.1);
+}
+
+body.light-mode #experienceTitle {
+    color: var(--light-accent);
+}
 
 /* Projects Grid Styles */
 .projects-grid {
